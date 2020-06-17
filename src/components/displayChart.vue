@@ -1,17 +1,19 @@
 <template>
   <div id="display-chart">
     <div class="chart-container">
-      <line-chart></line-chart>
+      <line-chart-1></line-chart-1>
+      <line-chart-2></line-chart-2>
     </div>
   </div>
 </template>
 
 <script>
-import LineChart from "./Chart.vue";
+import LineChart1 from "./ChartConfirmed.vue";
+import LineChart2 from "./ChartDeaths.vue";
 
 export default {
   name: "display-chart",
-  components: { LineChart }
+  components: { LineChart1, LineChart2}
 };
 </script>
 

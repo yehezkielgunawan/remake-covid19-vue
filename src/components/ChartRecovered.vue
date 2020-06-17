@@ -11,8 +11,8 @@ export default {
       labels: [],
       datasets: [
         {
-          label: "Confirmed Case",
-          backgroundColor: "#F44336",
+          label: "Recovered Case",
+          backgroundColor: "#69F0AE",
           pointBackgroundColor: "white",
           borderWidth: 1,
           pointBorderColor: "#249EBF",
@@ -21,9 +21,9 @@ export default {
       ]
     },
     options: {
-      title:{
+      title: {
         display: true,
-        text: "Weekly Global Covid-19 Confirmed Case"
+        text: "Weekly Global Covid-19 Recovered Cases"
       },
       scales: {
         yAxes: [
@@ -61,18 +61,17 @@ export default {
         .then(response => {
           const data_list = response.data;
           let date_temp = [];
-          let confirmed_temp = [];
+          let recovered_temp = [];
           let counter = 0;
           data_list.forEach(element => {
             counter++;
             if (counter % 7 == 0) {
               date_temp.push(element.reportDate);
-              confirmed_temp.push(element.totalConfirmed);
+              recovered_temp.push(element.recovered.total);
             }
           });
           this.datacollection.labels = date_temp;
-          this.datacollection.datasets[0].data = confirmed_temp;
-          // console.log(this.datacollection.datasets.data);
+          this.datacollection.datasets[0].data = recovered_temp;
           this.renderChart(this.datacollection, this.options);
         })
         .catch(error => console.log(error));
