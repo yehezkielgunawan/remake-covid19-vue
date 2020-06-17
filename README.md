@@ -1,8 +1,12 @@
-# yehez-covid19-vue
+# This is the remake of the previous Covid-19 Statistic
+This project is remake by Vue CLI, Vuetify, and Vue-Chart. <br/>
+Make sure you have installed Vue CLI in your PC, if don't you can follow [this](https://cli.vuejs.org/guide/installation.html) instructions.
 
 ## Project setup
 ```
 npm install
+vue add vuetify
+npm install vue-chartjs chart.js --save
 ```
 
 ### Compiles and hot-reloads for development
